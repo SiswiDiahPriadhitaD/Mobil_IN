@@ -31,4 +31,27 @@ Route::controller(CustomerHomeController::class)->group(function(){
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function(){
+    Route::controller(HomeController::class)->group(function(){
+        Route::put('update_profile', 'update_profile');
+        Route::get('change_password', 'change_password');
+        Route::put('update_password', 'update_password');
+    });
+});
+
+Route::middleware(['auth', 'isAdmin'])->group(function(){
+    Route::prefix('admin')->group(function(){
+        Route::controller(AdminHomeController::class)->group(function(){
+            Route::get('home', 'index');
+            Route::put('update_profile', 'update_profile');
+            Route::get('change_password', 'change_password');
+            Route::put('update_password', 'update_password');
+        });
+
+        Route::resource('brand', AdminBrandController::class);
+        Route::resource('type', AdminTypeController::class);
+        Route::resource('product', AdminProductController::class);
+        Route::resource('user', AdminUserController::class);
+    });
+});
