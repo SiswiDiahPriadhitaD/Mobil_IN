@@ -31,7 +31,8 @@ Route::controller(CustomerHomeController::class)->group(function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::middleware(['auth'])->group(function(){
     Route::controller(HomeController::class)->group(function(){
         Route::put('update_profile', 'update_profile');
