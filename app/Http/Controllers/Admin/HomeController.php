@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
     public function index(){
+       dd('ok');
         $title = 'Dashboard';
         return view('admin.home.index', compact([
             'title'
