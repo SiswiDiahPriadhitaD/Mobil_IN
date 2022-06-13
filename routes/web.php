@@ -39,6 +39,12 @@ Route::middleware(['auth'])->group(function(){
         Route::get('change_password', 'change_password');
         Route::put('update_password', 'update_password');
     });
+    Route::controller(CustomerTransactionController::class)->group(function(){
+        Route::get('transaction', 'index');
+        Route::post('transaction', 'store');
+        Route::get('transaction/{id}/show', 'show');
+    });
+  
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
