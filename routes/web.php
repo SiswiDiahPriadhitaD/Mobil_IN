@@ -50,6 +50,19 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
             Route::put('update_password', 'update_password');
         });
 
+        Route::controller(AdminTransactionController::class)->group(function(){
+            Route::get('transaction', 'index');
+            Route::get('transaction/{id}/show', 'show');
+            Route::get('transaction/{id}/unpaid', 'unpaid');
+        });
+
+        Route::controller(AdminPaymentController::class)->group(function(){
+            Route::get('payment', 'index');
+            Route::get('payment/{id}/show', 'show');
+            Route::put('payment/{id}', 'update');
+            Route::get('payment/export', 'export');
+        });
+        
         Route::resource('brand', AdminBrandController::class);
         Route::resource('type', AdminTypeController::class);
         Route::resource('product', AdminProductController::class);
