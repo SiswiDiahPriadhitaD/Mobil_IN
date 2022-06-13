@@ -83,7 +83,7 @@
                       @if ($item->status == 'paid')
                         <span class="btn btn-sm btn-success text-white">Paid Off</span>
                       @else
-                        <a href="/admin/payment/{{ $item->transaction_id }}/show" product="submit" class="btn btn-sm btn-warning text-white">Pay Now</a>
+                        <!-- <a href="/admin/payment/{{ $item->transaction_id }}/show" product="submit" class="btn btn-sm btn-warning text-white">Pay Now</a> -->
                       @endif
                   </td>
                 </tr>
