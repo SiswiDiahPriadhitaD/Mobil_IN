@@ -16,7 +16,13 @@
               <p class="card-text fs-11 text-justify">{{ $data->description }}</p>
               <div class="p-2"></div>
               <h5 class="float-start mt-2 text-dark fw-bold">Rp. {{ number_format($data->price) }}</h5>
+              @auth
+              
               <a href="#" data-bs-toggle="modal" data-bs-target="#checkoutModal" class="btn btn-dark btn-sm float-end px-5 py-2">Check Out</a>
+              @else
+              <a href="/login" class="btn btn-dark btn-sm float-end px-5 py-2">Buy Now</a>
+              @endauth
+              
             </div>
           </div>
 
@@ -39,7 +45,10 @@
 
         <div class="modal-body">
           <p class="text-center">Apakah anda yakin akan membeli mobil {{ $data->name }}?</p>
+          @auth
           <input type="hidden" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
+          @endauth
+         
           <input type="hidden" name="product_id" class="form-control" value="{{ $data->id }}">
           <input type="hidden" name="total" class="form-control" value="{{ $data->price }}">
           <label for="information">Informati Tambahan : </label>

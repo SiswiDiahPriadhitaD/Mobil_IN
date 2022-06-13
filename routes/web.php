@@ -7,8 +7,11 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
 
 use App\Http\Controllers\Customer\HomeController as CustomerHomeController;
+use App\Http\Controllers\Customer\TransactionController as CustomerTransactionController;
 
 use App\Http\Controllers\HomeController;
 
@@ -68,7 +71,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
             Route::put('payment/{id}', 'update');
             Route::get('payment/export', 'export');
         });
-        
+
         Route::resource('brand', AdminBrandController::class);
         Route::resource('type', AdminTypeController::class);
         Route::resource('product', AdminProductController::class);
