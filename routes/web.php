@@ -30,6 +30,7 @@ Route::controller(CustomerHomeController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/home', 'index');
     Route::get('/product/{id}/show', 'show');
+    Route::get('/product/{id}/brand', 'showbybrand');
 });
 
 Auth::routes();
@@ -37,9 +38,9 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function(){
-    Route::controller(HomeController::class)->group(function(){
+    Route::controller(CustomerHomeController::class)->group(function(){
+        Route::get('profile', 'profile');
         Route::put('update_profile', 'update_profile');
-        Route::get('change_password', 'change_password');
         Route::put('update_password', 'update_password');
     });
     Route::controller(CustomerTransactionController::class)->group(function(){
