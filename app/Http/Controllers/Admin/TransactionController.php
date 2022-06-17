@@ -23,6 +23,8 @@ class TransactionController extends Controller
         $title = 'Transaction Detail';
         $data = Transaction::with('user')
                         ->with('product')
+                        ->withCount('payment')
+                        ->where('transaction_id', $id)
                         ->first();
         return view('admin.transactions.unpaid', compact([
             'title', 'data'
