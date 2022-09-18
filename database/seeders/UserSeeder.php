@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
+
 class UserSeeder extends Seeder
 {
     /**
@@ -18,13 +19,13 @@ class UserSeeder extends Seeder
         $arrays = [
             [
                 'name' => 'Admin',
-                'email' => 'admin@carin.com',
+                'email' => 'admin1@carin.com',
                 'password' => Hash::make('admin'),
                 'role' => 'admin',
             ],
             [
                 'name' => 'Customer 1',
-                'email' => 'customer1@carin.com',
+                'email' => 'customer3@carin.com',
                 'password' => Hash::make('customer'),
                 'role' => 'customer',
             ],
@@ -36,7 +37,7 @@ class UserSeeder extends Seeder
             ],
         ];
 
-        foreach($arrays as $row){
+        foreach ($arrays as $row) {
             User::create([
                 'name' => $row['name'],
                 'email' => $row['email'],
