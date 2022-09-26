@@ -16,6 +16,6 @@ class AdminTypesCreateTest extends TestCase
     {
         $response = $this->get('/admin/type/create');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

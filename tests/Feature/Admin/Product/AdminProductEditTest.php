@@ -16,6 +16,6 @@ class AdminProductEditTest extends TestCase
     {
         $response = $this->get('/admin/product/edit');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

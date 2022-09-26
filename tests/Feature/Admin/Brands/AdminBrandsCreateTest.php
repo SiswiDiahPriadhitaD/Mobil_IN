@@ -16,6 +16,6 @@ class AdminBrandsCreateTest extends TestCase
     {
         $response = $this->get('/admin/brand/create');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

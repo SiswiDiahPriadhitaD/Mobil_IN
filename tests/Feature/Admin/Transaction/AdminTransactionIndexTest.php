@@ -16,6 +16,6 @@ class AdminTransactionIndexTest extends TestCase
     {
         $response = $this->get('/admin/transaction');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

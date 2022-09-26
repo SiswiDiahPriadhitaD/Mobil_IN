@@ -16,6 +16,6 @@ class AdminPaymentsShowTest extends TestCase
     {
         $response = $this->get('/admin/payment/$id/show');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

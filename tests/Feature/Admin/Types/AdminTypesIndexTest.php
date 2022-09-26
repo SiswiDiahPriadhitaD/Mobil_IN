@@ -16,6 +16,6 @@ class AdminTypesIndexTest extends TestCase
     {
         $response = $this->get('/admin/type');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

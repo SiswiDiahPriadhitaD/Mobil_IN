@@ -16,6 +16,6 @@ class AdminUserEditTest extends TestCase
     {
         $response = $this->get('/admin/user/$id/edit');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

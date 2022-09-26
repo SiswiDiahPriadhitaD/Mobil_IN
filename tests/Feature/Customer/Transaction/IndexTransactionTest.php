@@ -16,6 +16,6 @@ class IndexTransactionTest extends TestCase
     {
         $response = $this->get('/transaction');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

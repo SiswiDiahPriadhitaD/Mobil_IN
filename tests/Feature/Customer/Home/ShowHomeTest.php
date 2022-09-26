@@ -16,6 +16,6 @@ class ShowHomeTest extends TestCase
     {
         $response = $this->get('/product/$id/show');
 
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 }

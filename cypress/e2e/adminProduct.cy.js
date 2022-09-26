@@ -1,0 +1,18 @@
+describe('empty spec', () => {
+  it('passes', () => {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('body')
+    cy.get('.me-1 > .btn').click()
+    cy.get('#form2Example18').type('admin1@carin.com')
+    cy.get('#form2Example28').type('admin')
+    cy.get('.btn').click()
+    cy.get(':nth-child(5) > .sidebar-link > .mdi').click()
+    cy.get('.card-body > .btn').click()
+    cy.get('.form-horizontal > :nth-child(2) > div.col-md-12 > .form-control').type('MOBILIO')
+    cy.get('.form-horizontal > :nth-child(3) > div.col-md-12 > .form-control').type('TERBARU 2022')
+    cy.get(':nth-child(1) > div.col-md-12 > .form-control').type('Star 5,.0')
+    cy.get('.row > :nth-child(2) > div.col-md-12 > .form-control').type('45.000.000')
+    cy.get('.row > :nth-child(3) > div.col-md-12 > .form-control').type('siswi.png')
+    cy.get('.btn').click()
+  })
+})

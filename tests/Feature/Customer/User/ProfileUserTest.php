@@ -16,6 +16,6 @@ class ProfileUserTest extends TestCase
     {
         $response = $this->get('/profile');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

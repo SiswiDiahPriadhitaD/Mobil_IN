@@ -16,6 +16,6 @@ class AdminProductIndexTest extends TestCase
     {
         $response = $this->get('/admin/product');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

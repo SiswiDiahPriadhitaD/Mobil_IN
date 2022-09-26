@@ -16,6 +16,6 @@ class AdminUserIndexTest extends TestCase
     {
         $response = $this->get('/admin/user');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

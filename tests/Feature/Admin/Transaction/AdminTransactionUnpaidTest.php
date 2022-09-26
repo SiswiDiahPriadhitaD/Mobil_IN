@@ -16,6 +16,6 @@ class AdminTransactionUnpaidTest extends TestCase
     {
         $response = $this->get('/admin/transaction/$id/unpaid');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

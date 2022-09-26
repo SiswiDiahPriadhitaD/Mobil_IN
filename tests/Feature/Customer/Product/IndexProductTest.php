@@ -16,6 +16,6 @@ class IndexProductTest extends TestCase
     {
         $response = $this->get('/login/home');
 
-        $response->assertStatus(404);
+        $response->assertStatus(200);
     }
 }

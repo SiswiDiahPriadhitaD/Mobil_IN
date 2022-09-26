@@ -16,6 +16,6 @@ class AdminPaymentsExportPDFTest extends TestCase
     {
         $response = $this->get('/admin/payment/export');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }

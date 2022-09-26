@@ -16,6 +16,6 @@ class ShowTransactionTest extends TestCase
     {
         $response = $this->get('/transaction/$id_transaction/show');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }
